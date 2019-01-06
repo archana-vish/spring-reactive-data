@@ -46,4 +46,12 @@ public class OfficerRepositoryTest {
                 .expectNextMatches(officer -> !officer.getId().equals(""))
                 .verifyComplete();
     }
+
+    @Test
+    public void findAll() {
+        StepVerifier.create(repository.findAll())
+                .expectNextCount(5)
+                .verifyComplete();
+    }
+
 }
